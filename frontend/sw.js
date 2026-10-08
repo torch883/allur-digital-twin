@@ -1,4 +1,4 @@
-const CACHE='allur-twin-v2';
+const CACHE='allur-twin-v3';
 const ASSETS=['/','/static/css/styles.css','/static/fonts/Inter-Variable.woff2',...['main','ui','api','ws','charts','plant-map','icons','dashboard','incidents','forecast','impact','architecture','presentation','offline-data','offline-snapshot'].map(n=>'/static/js/'+n+'.js')];
 self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(ASSETS)).then(()=>self.skipWaiting()));});
 self.addEventListener('activate',event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim()));});
