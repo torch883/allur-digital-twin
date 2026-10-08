@@ -1,0 +1,13 @@
+services:
+  allur:
+    build: .
+    ports:
+      - "127.0.0.1:8000:8000"
+    environment:
+      DATABASE_URL: ${DATABASE_URL:-sqlite:////srv/allur/data/allur.db}
+      SIMULATION_ENABLED: "true"
+    volumes:
+      - allur-data:/srv/allur/data
+    restart: unless-stopped
+volumes:
+  allur-data:
