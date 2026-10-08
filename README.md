@@ -105,7 +105,7 @@ WebSocket `/ws/live`: JSON `{type,payload}`. Типы: kpi_update, equipment_sta
 
 ## Структура и эксплуатация
 
-`app/models.py` — SQLAlchemy-схема; `app/services/` — расчёты, правила, симулятор, ML и представления; `app/routers/` — REST и WS; `app/seed/` — исходный кейс и генератор; `app/tests/` — тесты. `frontend/` — HTML, CSS, JS-модули, Service Worker и локальный Inter (лицензия SIL OFL в `frontend/fonts/OFL.txt`). Сборщики и npm не нужны.
+`app/models.py` — SQLAlchemy-схема; `app/services/` — расчёты, правила, симулятор, ML и представления; `app/routers/` — REST и WS; `app/seed/` — исходный кейс и генератор; `app/tests/` — тесты. `frontend/` — HTML, CSS, JS-модули, Service Worker и локальный Inter (лицензия SIL OFL в `frontend/fonts/OFL.txt`). Иконки схемы завода — [Streamline Core Line Free](https://www.streamlinehq.com/icons/core-line-free), CC BY 4.0 (`frontend/js/icons.js`). Логотип — SVG-знак ALLUR с allur.kz. Сборщики и npm не нужны.
 
 Переменные окружения: `DATABASE_URL`, `TICK_SECONDS` (по умолчанию 2,5), `SIMULATION_ENABLED` (true/false). Для PostgreSQL задайте `DATABASE_URL=postgresql+psycopg://USER:PASSWORD@HOST:5432/DB` перед стартом; таблицы создаются теми же моделями без изменения кода. Перенос уже накопленных записей между СУБД отдельно не реализован. Живое подключение PostgreSQL в среде подготовки не проверялось; проверена компиляция схемы для PostgreSQL.
 
